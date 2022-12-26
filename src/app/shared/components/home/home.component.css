@@ -1,0 +1,20 @@
+.carousel-item {
+  max-height: 480px !important;
+}
+
+.new-products-boxes .card img {
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.new-products-boxes .card:hover img {
+  -moz-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+}
+@media (max-width: 991px) {
+  #template-mo-zay-hero-carousel .carousel-indicators li {
+    display: none !important;
+    background-color: #ebb812;
+  }
+}

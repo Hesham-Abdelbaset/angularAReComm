@@ -1,0 +1,14 @@
+<div class="selectAll d-flex align-content-center align-items-center">
+  <label for="" class="px-2">{{ title }} </label>
+  <select
+    name=""
+    id=""
+    (change)="detectChanges($event)"
+    class="form-select w-50"
+  >
+    <option value="all" selected>All Categories</option>
+    <option value="{{ category }}" *ngFor="let category of data">
+      {{ category }}
+    </option>
+  </select>
+</div>

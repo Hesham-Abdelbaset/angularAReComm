@@ -1,0 +1,5 @@
+nav.navbar {
+  /* box-shadow: 5px 5px 5px #333 !important; */
+  z-index: 1000;
+  background-color: #fff !important;
+}

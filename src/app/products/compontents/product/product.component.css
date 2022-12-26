@@ -1,0 +1,23 @@
+.card {
+  min-height: 450px !important;
+  max-height: 450px !important;
+}
+
+.card .img-box {
+  min-height: 250px !important;
+  max-height: 250px !important;
+  background-color: #fff;
+}
+.card .img-box img {
+  min-height: 250px !important;
+  max-height: 250px !important;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.card .img-box:hover img {
+  transform: scale(1.1, 1.1);
+}
+.card .card-body {
+  /* background-color: rgba(172, 167, 167, 0.829) !important; */
+}
