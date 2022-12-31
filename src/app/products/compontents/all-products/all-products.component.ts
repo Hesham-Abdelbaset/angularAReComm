@@ -2,6 +2,7 @@ import { Product } from './../../modles/product';
 import { ProductsService } from './../../services/products.service';
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import * as $ from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-all-products',
@@ -13,7 +14,7 @@ export class AllProductsComponent implements OnInit {
   categoires: string[] = [];
   loading: boolean = false;
   cartProducts: any[] = [];
-  constructor(private service: ProductsService) {}
+  constructor(private service: ProductsService, private toast: ToastrService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -73,8 +74,9 @@ export class AllProductsComponent implements OnInit {
         (item) => item.item.id == event.item.id
       );
       if (exists) {
-        alert('this in cart');
+        this.toast.error('This product in the cart!');
       } else {
+        this.toast.success('Done, Your Products in cart');
         this.cartProducts.push(event);
         localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       }

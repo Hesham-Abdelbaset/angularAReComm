@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AllProductsComponent } from './compontents/all-products/all-products.component';
 import { ProductsDetailsComponent } from './compontents/products-details/products-details.component';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
     ProductsDetailsComponent,
     ProductComponent,
   ],
-  imports: [CommonModule, SharedModule, RouterModule],
-  exports: [AllProductsComponent, RouterModule],
+  imports: [CommonModule, SharedModule, RouterModule, BrowserAnimationsModule],
+  exports: [AllProductsComponent, RouterModule, BrowserAnimationsModule],
 })
 export class ProductsModule {}

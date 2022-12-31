@@ -1,5 +1,5 @@
 .card {
-  min-height: 450px !important;
+  min-height: 425px !important;
   max-height: 450px !important;
 }
 
@@ -9,15 +9,45 @@
   background-color: #fff;
 }
 .card .img-box img {
-  min-height: 250px !important;
-  max-height: 250px !important;
+  max-width: 220px;
+  min-height: 220px !important;
+  max-height: 220px !important;
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.card .img-box:hover img {
+.broduct-box {
+  background: #f1f0f0;
+}
+.broduct-box:hover .img-box img {
   transform: scale(1.1, 1.1);
 }
 .card .card-body {
   /* background-color: rgba(172, 167, 167, 0.829) !important; */
+}
+.broduct-box {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+.broduct-box .addBtnContainer {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  bottom: -10%;
+}
+.broduct-box:hover .addBtnContainer {
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%);
+  display: block !important;
+}
+.off {
+  width: 100px;
+  height: 100px;
+  top: -1%;
+  left: 0%;
+  background-image: url("../../../../assets/img/off.png");
+  background-position: -1% 1%;
+  background-size: 226px;
+  z-index: 5000;
 }

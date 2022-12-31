@@ -2,6 +2,7 @@ import { Product } from './../../modles/product';
 import { CartsService } from './../../../carts/services/carts.service';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import * as $ from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,7 @@ export class ProductComponent implements OnInit {
   @Output() item = new EventEmitter();
   addbtn: boolean = false;
   amount: number = 1;
-  constructor() {}
+  constructor(private toast: ToastrService) {}
 
   ngOnInit(): void {}
   add() {

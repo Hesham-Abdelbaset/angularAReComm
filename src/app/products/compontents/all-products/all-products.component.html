@@ -1,4 +1,4 @@
-<div class="theProducts">
+<div class="theProducts py-5">
   <div class="container">
     <div class="">
       <div class="py-3">
@@ -9,7 +9,10 @@
         ></app-select>
       </div>
       <div class="row" *ngIf="!loading">
-        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of products">
+        <div
+          class="col-sm-6 mainPBox col-md-4 col-lg-3"
+          *ngFor="let item of products"
+        >
           <app-product [data]="item" (item)="addToCard($event)"></app-product>
         </div>
       </div>

@@ -1,52 +1,59 @@
-<div class="card my-3 shadow bg-body-tertiary rounded p-2">
+<div class="broduct-box position-relative card my-3 rounded p-2">
   <div class="item">
-    <div routerLink="/details/{{ data.id }}">
-      <div class="img-box">
+    <div class="position-relative" routerLink="/details/{{ data.id }}">
+      <div class="off position-absolute"></div>
+      <div class="img-box text-center">
         <img class="card-img-top p-3" src="{{ data.image }}" alt="" />
       </div>
       <div class="card-body">
-        <h6 class="py-2 card-title">
+        <h6 class="py-1 card-title mb-0">
           {{ data.title.substr(0, 20) }}
         </h6>
         <p
-          class="py-2 mt-3 card-text"
+          class="py-1 mt-1 mb-0 card-text text-muted"
           style="min-height: 50px; max-height: 50px; overflow: hidden"
         >
           {{ data.description.substr(0, 20) }} ...
         </p>
+        <span class="w-100 d-inline-block text-center"
+          >{{ data.price }} LE</span
+        >
       </div>
     </div>
-    <div class="d-flex justify-content-between align-items-center px-1">
-      <button
-        class="btn btn-success main-add-to-cart"
-        (click)="add(); addbtn = false"
-      >
-        Add to card
-        <!-- {{ addbtn == false ? "add to cart" : "in cart !" }} -->
-        <!-- <script>
-          $(function () {
-            $(this).on("click", function () {
-              console.log("test");
+    <div class="d-none addBtnContainer position-absolute">
+      <div class="addBtnBlock">
+        <div class="d-flex justify-content-center align-items-center px-1">
+          <button
+            class="btn btn-primary main-add-to-cart"
+            (click)="add(); addbtn = false"
+          >
+            Add to card
+            <!-- {{ addbtn == false ? "add to cart" : "in cart !" }} -->
+            <!-- <script>
+            $(function () {
+              $(this).on("click", function () {
+                console.log("test");
+              });
             });
-          });
-        </script> -->
-      </button>
-      <!-- <div class="d-flex w-50" *ngIf="addbtn">
-        <input
-          type="number"
-          value="1"
-          class="form-control"
-          [(ngModel)]="amount"
-        />
-        <button
-          class="btn btn-danger"
-          (click)="add(); addbtn = false"
-          [class.disabled]="amount < 1"
-        >
-          Add
-        </button>
-      </div> -->
-      <span>{{ data.price }} LE</span>
+          </script> -->
+          </button>
+          <!-- <div class="d-flex w-50" *ngIf="addbtn">
+          <input
+            type="number"
+            value="1"
+            class="form-control"
+            [(ngModel)]="amount"
+          />
+          <button
+            class="btn btn-danger"
+            (click)="add(); addbtn = false"
+            [class.disabled]="amount < 1"
+          >
+            Add
+          </button>
+        </div> -->
+        </div>
+      </div>
     </div>
   </div>
 </div>

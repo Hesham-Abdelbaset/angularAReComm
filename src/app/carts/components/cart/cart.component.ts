@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CartsService } from '../../services/carts.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class CartComponent implements OnInit {
   public cartProducts: any[] = [];
   total: number = 0;
   success: boolean = false;
-  constructor(private service: CartsService) {}
+  constructor(private service: CartsService, private toast: ToastrService) {}
 
   ngOnInit(): void {
     this.getCartProducts();
@@ -37,14 +38,20 @@ export class CartComponent implements OnInit {
     localStorage.setItem('cart', JSON.stringify(this.cartProducts));
   }
   deleteProduct(index: number) {
+    this.toast.success('Product Deleted');
     this.cartProducts.splice(index, 1);
     this.getProductsTotal();
     localStorage.setItem('cart', JSON.stringify(this.cartProducts));
   }
   clearCart() {
-    this.cartProducts = [];
-    this.getProductsTotal();
-    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    if (this.cartProducts.length >= 1) {
+      this.toast.success('The cart is empty');
+      this.cartProducts = [];
+      this.getProductsTotal();
+      localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    } else {
+      this.toast.error('No Products Here');
+    }
   }
   getProductsTotal() {
     this.total = 0;

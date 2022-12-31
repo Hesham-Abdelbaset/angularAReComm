@@ -1,6 +1,10 @@
 .theProducts {
-  background-color: rgb(240, 240, 240);
 }
 .spin {
   z-index: 1000 !important;
+}
+@media (max-width: 575px) {
+  .mainPBox {
+    padding: 0 70px !important;
+  }
 }

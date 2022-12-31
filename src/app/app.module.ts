@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ProductsModule } from './products/products.module';
 import { CartsModule } from './carts/carts.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { CartsModule } from './carts/carts.module';
     ProductsModule,
     FormsModule,
     CartsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

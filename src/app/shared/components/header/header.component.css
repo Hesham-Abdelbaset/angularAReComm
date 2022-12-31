@@ -3,3 +3,9 @@ nav.navbar {
   z-index: 1000;
   background-color: #fff !important;
 }
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.navbar-toggler[aria-expanded="true"] span {
+  color: aquamarine;
+}
