@@ -14,10 +14,7 @@ export class ProductsDetailsComponent implements OnInit {
   id: any;
   data: any = {};
   loading: boolean = false;
-  @Input() data2!: Product;
-  @Output() item = new EventEmitter();
-  addbtn: boolean = false;
-  amount: number = 1;
+
   constructor(
     private route: ActivatedRoute,
     private service: ProductsService,
@@ -44,8 +41,5 @@ export class ProductsDetailsComponent implements OnInit {
         alert('Error');
       }
     );
-  }
-  add() {
-    this.item.emit({ item: this.data, quantity: this.amount });
   }
 }
