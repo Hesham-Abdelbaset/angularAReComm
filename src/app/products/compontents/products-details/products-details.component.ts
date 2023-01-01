@@ -1,7 +1,8 @@
 import { ProductsService } from './../../services/products.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
+import { Product } from '../../modles/product';
 
 @Component({
   selector: 'app-products-details',
@@ -13,6 +14,10 @@ export class ProductsDetailsComponent implements OnInit {
   id: any;
   data: any = {};
   loading: boolean = false;
+  @Input() data2!: Product;
+  @Output() item = new EventEmitter();
+  addbtn: boolean = false;
+  amount: number = 1;
   constructor(
     private route: ActivatedRoute,
     private service: ProductsService,
@@ -40,8 +45,7 @@ export class ProductsDetailsComponent implements OnInit {
       }
     );
   }
-
-  test() {
-    this.productA.add();
+  add() {
+    this.item.emit({ item: this.data, quantity: this.amount });
   }
 }

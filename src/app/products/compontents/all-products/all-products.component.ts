@@ -74,9 +74,9 @@ export class AllProductsComponent implements OnInit {
         (item) => item.item.id == event.item.id
       );
       if (exists) {
-        this.toast.error('This product in the cart!');
+        this.toast.error('This product alreday in the cart!');
       } else {
-        this.toast.success('Done, Your Products in cart');
+        this.toast.success('Done, Your Product in the cart');
         this.cartProducts.push(event);
         localStorage.setItem('cart', JSON.stringify(this.cartProducts));
       }

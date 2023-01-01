@@ -1,9 +1,18 @@
 <div class="broduct-box position-relative card my-3 rounded p-2">
   <div class="item">
-    <div class="position-relative" routerLink="/details/{{ data.id }}">
+    <div class="position-relative">
       <div class="off position-absolute"></div>
-      <div class="img-box text-center">
+      <div class="img-box position-relative text-center">
         <img class="card-img-top p-3" src="{{ data.image }}" alt="" />
+        <div
+          class="options invisible d-flex justify-content-center align-items-center align-content-end position-absolute w-100 h-100"
+        >
+          <i
+            class="fa fa-eye fa-lg p-3 border mx-1 bg-light text-success"
+            routerLink="/details/{{ data.id }}"
+          ></i>
+          <i class="fa fa-heart fa-lg p-3 border mx-1 bg-light text-danger"></i>
+        </div>
       </div>
       <div class="card-body">
         <h6 class="py-1 card-title mb-0">
@@ -16,8 +25,8 @@
           {{ data.description.substr(0, 20) }} ...
         </p>
         <span class="w-100 d-inline-block text-center"
-          >{{ data.price }} LE</span
-        >
+          >{{ data.price | currency : "USD" }}
+        </span>
       </div>
     </div>
     <div class="d-none addBtnContainer position-absolute">

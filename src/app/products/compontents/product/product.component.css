@@ -4,11 +4,14 @@
 }
 
 .card .img-box {
+  overflow: hidden;
+
   min-height: 250px !important;
   max-height: 250px !important;
   background-color: #fff;
 }
 .card .img-box img {
+  overflow: hidden;
   max-width: 220px;
   min-height: 220px !important;
   max-height: 220px !important;
@@ -20,6 +23,10 @@
   background: #f1f0f0;
 }
 .broduct-box:hover .img-box img {
+  transform: scale(1.1, 1.1);
+}
+.broduct-box:hover .options {
+  visibility: visible !important;
   transform: scale(1.1, 1.1);
 }
 .card .card-body {
@@ -42,12 +49,29 @@
   display: block !important;
 }
 .off {
-  width: 100px;
-  height: 100px;
-  top: -1%;
-  left: 0%;
-  background-image: url("../../../../assets/img/off.png");
+  width: 70px;
+  height: 70px;
+  top: 1%;
+  left: 1%;
+  background-image: url("../../../../assets/img/off.png ");
   background-position: -1% 1%;
-  background-size: 226px;
-  z-index: 5000;
+  background-size: 165px;
+  z-index: 999;
+}
+
+.options {
+  top: 0;
+  left: 0;
+  background-color: rgba(4, 52, 80, 0.205);
+  background-color: rgba(51, 51, 51, 0.226);
+  z-index: 1000 !important;
+  -moz-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.options i {
+  -moz-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
 }
